@@ -207,7 +207,7 @@ async function run() {
         });
 
 
-        app.get('/assignments/:id', verifyJWT, async (req, res) => {
+        app.get('/assignments/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
             const result = await assignmentCollection.findOne(query);
